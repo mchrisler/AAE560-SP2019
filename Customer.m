@@ -7,8 +7,19 @@ classdef Customer < handle
         new_wo_due_date=0
     end
     
+    events
+        wo_placed
+        wo_received
+    end
+    
     methods
         function obj = Customer(new_wo,new_wo_due_date)
+            if new_wo > 0
+                obj.new_wo = WorkOrder;
+            else
+                obj.new_wo = 'No Orders';
+            end
+        
 %             %UNTITLED Construct an instance of this class
 %             %   Detailed explanation goes here
 %             obj.Property1 = inputArg1 + inputArg2;
